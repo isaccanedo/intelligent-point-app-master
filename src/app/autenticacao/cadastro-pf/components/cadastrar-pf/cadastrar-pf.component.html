@@ -1,0 +1,37 @@
+<form [formGroup]="form" fxLayoutAlign="center" novalidate>
+  <mat-list>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="CNPJ" formControlName="cnpj" [imask]="{mask: '00.000.000/0000-00'}">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="CPF" formControlName="cpf" [imask]="{mask: '000.000.000-00'}">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Nome" formControlName="nome">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Senha" formControlName="senha">
+      </mat-form-field>
+      <span matTooltip="Senha deve conter 6 caracteres.">
+        <mat-icon>help</mat-icon>
+      </span>
+    </mat-list-item>
+    <mat-list-item fxLayoutAlign="center">
+      <button mat-raised-button color="primary" [disabled]='form.invalid' (click)='cadastrarPf()'>Cadastrar</button>
+      &nbsp;
+      <a mat-raised-button routerLink="/login">Voltar</a>
+    </mat-list-item>
+  </mat-list>
+</form>
